@@ -1,0 +1,104 @@
+[gd_scene load_steps=7 format=3 uid="uid://dr8o8yf0uopc1"]
+
+[ext_resource type="Script" path="res://HUD/main_view_hud/Steps.gd" id="1_1vah2"]
+[ext_resource type="Texture2D" uid="uid://dc5qlltu15ocg" path="res://assets/free_assets/placeholder_assets/animal_pack/Vector/round.svg" id="1_6r8ry"]
+[ext_resource type="Script" path="res://HUD/main_view_hud/TurnTracker.gd" id="1_xxg20"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wo0hb"]
+atlas = ExtResource("1_6r8ry")
+region = Rect2(160, 230, 129, 146)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sira3"]
+atlas = ExtResource("1_6r8ry")
+region = Rect2(479, 230, 144, 129)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i65r2"]
+atlas = ExtResource("1_6r8ry")
+region = Rect2(348, 32, 129, 129)
+
+[node name="PrincipalHUD" type="CanvasLayer"]
+
+[node name="MainResources" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 100)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_right = 200.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="TurnTracker" type="Label" parent="MainResources"]
+layout_mode = 2
+text = "Turn: <value>"
+script = ExtResource("1_xxg20")
+
+[node name="Money" type="Label" parent="MainResources"]
+layout_mode = 2
+text = "Money: <value>"
+
+[node name="Steps" type="Label" parent="MainResources"]
+layout_mode = 2
+text = "Steps: <value>"
+script = ExtResource("1_1vah2")
+
+[node name="ItemList" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(100, 200)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -300.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Head" type="Sprite2D" parent="ItemList"]
+position = Vector2(50, 50)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_wo0hb")
+
+[node name="HeadLabel" type="Label" parent="ItemList/Head"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -85.0
+offset_top = -100.0
+offset_right = -44.0
+offset_bottom = -77.0
+grow_horizontal = 2
+text = "Head"
+
+[node name="Gun" type="Sprite2D" parent="ItemList"]
+position = Vector2(50, 150)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_sira3")
+
+[node name="GunLabel" type="Label" parent="ItemList/Gun"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -85.0
+offset_top = -100.0
+offset_right = -44.0
+offset_bottom = -77.0
+grow_horizontal = 2
+text = "Gun"
+
+[node name="Horse" type="Sprite2D" parent="ItemList"]
+position = Vector2(50, 250)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_i65r2")
+
+[node name="HorseLabel" type="Label" parent="ItemList/Horse"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -85.0
+offset_top = -100.0
+offset_right = -44.0
+offset_bottom = -77.0
+grow_horizontal = 2
+text = "Horse"

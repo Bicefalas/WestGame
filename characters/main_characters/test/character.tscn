@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtqnpxrpvfsyc"]
+[gd_scene load_steps=5 format=3 uid="uid://dtqnpxrpvfsyc"]
 
 [ext_resource type="Script" path="res://characters/main_characters/test/character.gd" id="1_gc6o2"]
 [ext_resource type="Texture2D" uid="uid://bbmu2aixuedob" path="res://assets/free_assets/placeholder_assets/animal_pack/Vector/round_nodetails.svg" id="1_rntaj"]
+[ext_resource type="PackedScene" uid="uid://dr8o8yf0uopc1" path="res://HUD/main_view_hud/principal_hud.tscn" id="3_ldbto"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vgvor"]
 atlas = ExtResource("1_rntaj")
@@ -13,9 +14,10 @@ texture = SubResource("AtlasTexture_vgvor")
 script = ExtResource("1_gc6o2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-scale = Vector2(1, 1)
 limit_left = -500
 limit_top = -550
 limit_right = 1750
 limit_bottom = 1000
 limit_smoothed = true
+
+[node name="PrincipalHUD" parent="Camera2D" instance=ExtResource("3_ldbto")]
